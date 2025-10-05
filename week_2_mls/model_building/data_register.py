@@ -3,7 +3,8 @@ from huggingface_hub import HfApi, create_repo
 import os
 from week_2_mls.config import HF_REPO_ID
 
-repo_id = HF_REPO_ID
+# repo_id = HF_REPO_ID
+repo_id = "CodingBuddy/Machine-Failure-Prediction"
 repo_type = "dataset"
 
 # Initialize API client
