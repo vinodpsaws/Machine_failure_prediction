@@ -1,10 +1,7 @@
 name: Week 2 MLS pipeline
-
 on:
   workflow_dispatch:
-
 jobs:
-
   register-dataset:
     runs-on: ubuntu-latest
     steps:
@@ -15,7 +12,6 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python week_2_mls/model_building/data_register.py
-
   data-prep:
     needs: register-dataset
     runs-on: ubuntu-latest
@@ -27,8 +23,6 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python week_2_mls/model_building/prep.py
-
-
   model-traning:
     needs: data-prep
     runs-on: ubuntu-latest
@@ -40,8 +34,6 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python week_2_mls/model_building/train.py
-
-
   deploy-hosting:
     runs-on: ubuntu-latest
     needs: [model-traning,data-prep,register-dataset]
