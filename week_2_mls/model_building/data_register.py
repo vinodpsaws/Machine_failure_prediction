@@ -1,7 +1,7 @@
 from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 from huggingface_hub import HfApi, create_repo
 import os
-
+from week_2_mls.config import HF_REPO_ID
 
 repo_id = HF_REPO_ID
 repo_type = "dataset"
