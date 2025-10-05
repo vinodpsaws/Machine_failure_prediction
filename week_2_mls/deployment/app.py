@@ -8,7 +8,7 @@ from config import HF_REPO_ID
 model_path = hf_hub_download(repo_id=HF_REPO_ID, filename="best_machine_failure_model_v1.joblib")
 model = joblib.load(model_path)
 
-# Streamlit UI for Machine Failure Prediction
+# Streamlit UI for Machine Failure Prediction.
 st.title("Machine Failure Prediction App")
 st.write("""
 This application predicts the likelihood of a machine failing based on its operational parameters.
